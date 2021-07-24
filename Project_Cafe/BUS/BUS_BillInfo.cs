@@ -1,0 +1,37 @@
+﻿using DAO;
+using DTO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BUS
+{
+    public class BUS_BillInfo
+    {
+        private static BUS_BillInfo instance;
+
+        public static BUS_BillInfo Instance 
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new BUS_BillInfo();
+                return instance;
+            }
+        }
+        public List<BillInfo> getBillInfoByIdBill(int id)
+        {
+            return DAO_BillInfo.Instance.getBillInfoByIdBill(id);
+        }
+        public void InsertBillInfo(int idBill, int idFood, int count)
+        {
+            DAO_BillInfo.Instance.InsertBillInfo(idBill, idFood, count);
+        }
+        public void UpdateBillInfo(int count, int id)
+        {
+            DAO_BillInfo.Instance.UpdateBillInfo(count, id);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\bin\Debug\ConsoleAppCafe.exe.config
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\bin\Debug\ConsoleAppCafe.exe
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\bin\Debug\ConsoleAppCafe.pdb
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\bin\Debug\DAO.dll
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\bin\Debug\DTO.dll
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\bin\Debug\DAO.pdb
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\bin\Debug\DTO.pdb
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\obj\Debug\ConsoleAppCafe.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\obj\Debug\ConsoleAppCafe.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\obj\Debug\ConsoleAppCafe.csproj.CopyComplete
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\obj\Debug\ConsoleAppCafe.exe
+C:\Users\Admin\source\repos\Project_Cafe\ConsoleAppCafe\obj\Debug\ConsoleAppCafe.pdb
