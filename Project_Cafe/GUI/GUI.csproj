@@ -98,6 +98,12 @@
     <Compile Include="FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPBill.Designer.cs">
+      <DependentUpon>RPBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="UFood.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,10 @@
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRBill.rdlc" />
+    <EmbeddedResource Include="RPBill.resx">
+      <DependentUpon>RPBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UFood.resx">
       <DependentUpon>UFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +155,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.ItemBill.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,8 +193,11 @@
     <Content Include="Images\icons8_bar_chart_50px_7.png" />
     <Content Include="Images\icons8_cafe_100px_2.png" />
     <Content Include="Images\icons8_cafe_80px.png" />
+    <Content Include="Images\icons8_cancel_16px.png" />
+    <Content Include="Images\icons8_cancel_24px_2.png" />
     <Content Include="Images\icons8_database_24px.png" />
     <Content Include="Images\icons8_database_import_24px.png" />
+    <Content Include="Images\icons8_delete_24px_1.png" />
     <Content Include="Images\icons8_features_list_50px.png" />
     <Content Include="Images\icons8_monitor_24px.png" />
     <Content Include="Images\icons8_password_24px_1.png" />

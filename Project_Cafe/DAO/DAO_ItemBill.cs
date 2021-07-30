@@ -41,10 +41,9 @@ namespace DAO
                     item.Count = (int)dr["SL"];
                     item.FoodName = dr["NameFood"].ToString();
                     item.Price = (double)dr["Price"];
-                    
-
                     list.Add(item);
                 }
+                conn.Close();
             }
             catch(Exception)
             {

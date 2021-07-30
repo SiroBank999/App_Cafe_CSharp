@@ -48,7 +48,7 @@ namespace DAO
                     food.ImageFood = dr["image"].ToString();
                     listFood.Add(food);
                 }
-                //conn.Close();
+                conn.Close();
             }
             catch(Exception)
             {

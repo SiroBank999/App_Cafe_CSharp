@@ -34,6 +34,7 @@ namespace DAO
                 cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add("@idTable", SqlDbType.Int).Value = id;
                 cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch
             {
@@ -58,6 +59,7 @@ namespace DAO
                     bill.Status = (int)dr["status"];
                     bill.DateCheckOut = (DateTime)dr["DateCheckOut"];
                 }
+                conn.Close();
             }
             catch(Exception)
             {

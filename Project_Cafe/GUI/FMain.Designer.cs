@@ -33,11 +33,6 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.eElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.PLeft = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnListUser = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnListSanPham = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnDoanhThu = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnHome = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PHeader = new System.Windows.Forms.Panel();
             this.ControlBox_Min = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlBox_Max = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -45,9 +40,14 @@ namespace GUI
             this.DragMain = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.PMain = new System.Windows.Forms.Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnListUser = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnListSanPham = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnDoanhThu = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnHome = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // eElipse
@@ -66,6 +66,70 @@ namespace GUI
             this.PLeft.Name = "PLeft";
             this.PLeft.Size = new System.Drawing.Size(94, 650);
             this.PLeft.TabIndex = 0;
+            // 
+            // PHeader
+            // 
+            this.PHeader.Controls.Add(this.ControlBox_Min);
+            this.PHeader.Controls.Add(this.ControlBox_Max);
+            this.PHeader.Controls.Add(this.ControlBox_Close);
+            this.PHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PHeader.Location = new System.Drawing.Point(94, 0);
+            this.PHeader.Name = "PHeader";
+            this.PHeader.Size = new System.Drawing.Size(888, 38);
+            this.PHeader.TabIndex = 1;
+            // 
+            // ControlBox_Min
+            // 
+            this.ControlBox_Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ControlBox_Min.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.ControlBox_Min.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.ControlBox_Min.HoverState.Parent = this.ControlBox_Min;
+            this.ControlBox_Min.IconColor = System.Drawing.Color.White;
+            this.ControlBox_Min.Location = new System.Drawing.Point(775, 1);
+            this.ControlBox_Min.Name = "ControlBox_Min";
+            this.ControlBox_Min.ShadowDecoration.Parent = this.ControlBox_Min;
+            this.ControlBox_Min.Size = new System.Drawing.Size(37, 35);
+            this.ControlBox_Min.TabIndex = 2;
+            // 
+            // ControlBox_Max
+            // 
+            this.ControlBox_Max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ControlBox_Max.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.ControlBox_Max.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.ControlBox_Max.HoverState.Parent = this.ControlBox_Max;
+            this.ControlBox_Max.IconColor = System.Drawing.Color.White;
+            this.ControlBox_Max.Location = new System.Drawing.Point(812, 1);
+            this.ControlBox_Max.Name = "ControlBox_Max";
+            this.ControlBox_Max.ShadowDecoration.Parent = this.ControlBox_Max;
+            this.ControlBox_Max.Size = new System.Drawing.Size(37, 35);
+            this.ControlBox_Max.TabIndex = 1;
+            // 
+            // ControlBox_Close
+            // 
+            this.ControlBox_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ControlBox_Close.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.ControlBox_Close.HoverState.Parent = this.ControlBox_Close;
+            this.ControlBox_Close.IconColor = System.Drawing.Color.White;
+            this.ControlBox_Close.Location = new System.Drawing.Point(849, 1);
+            this.ControlBox_Close.Name = "ControlBox_Close";
+            this.ControlBox_Close.ShadowDecoration.Parent = this.ControlBox_Close;
+            this.ControlBox_Close.Size = new System.Drawing.Size(37, 35);
+            this.ControlBox_Close.TabIndex = 0;
+            // 
+            // DragMain
+            // 
+            this.DragMain.TargetControl = this.PHeader;
+            // 
+            // PMain
+            // 
+            this.PMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PMain.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.PMain.Location = new System.Drawing.Point(94, 40);
+            this.PMain.Name = "PMain";
+            this.PMain.Size = new System.Drawing.Size(886, 610);
+            this.PMain.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -192,70 +256,6 @@ namespace GUI
             this.btnHome.TabIndex = 0;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // PHeader
-            // 
-            this.PHeader.Controls.Add(this.ControlBox_Min);
-            this.PHeader.Controls.Add(this.ControlBox_Max);
-            this.PHeader.Controls.Add(this.ControlBox_Close);
-            this.PHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PHeader.Location = new System.Drawing.Point(94, 0);
-            this.PHeader.Name = "PHeader";
-            this.PHeader.Size = new System.Drawing.Size(888, 38);
-            this.PHeader.TabIndex = 1;
-            // 
-            // ControlBox_Min
-            // 
-            this.ControlBox_Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ControlBox_Min.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.ControlBox_Min.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.ControlBox_Min.HoverState.Parent = this.ControlBox_Min;
-            this.ControlBox_Min.IconColor = System.Drawing.Color.White;
-            this.ControlBox_Min.Location = new System.Drawing.Point(775, 1);
-            this.ControlBox_Min.Name = "ControlBox_Min";
-            this.ControlBox_Min.ShadowDecoration.Parent = this.ControlBox_Min;
-            this.ControlBox_Min.Size = new System.Drawing.Size(37, 35);
-            this.ControlBox_Min.TabIndex = 2;
-            // 
-            // ControlBox_Max
-            // 
-            this.ControlBox_Max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ControlBox_Max.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.ControlBox_Max.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.ControlBox_Max.HoverState.Parent = this.ControlBox_Max;
-            this.ControlBox_Max.IconColor = System.Drawing.Color.White;
-            this.ControlBox_Max.Location = new System.Drawing.Point(812, 1);
-            this.ControlBox_Max.Name = "ControlBox_Max";
-            this.ControlBox_Max.ShadowDecoration.Parent = this.ControlBox_Max;
-            this.ControlBox_Max.Size = new System.Drawing.Size(37, 35);
-            this.ControlBox_Max.TabIndex = 1;
-            // 
-            // ControlBox_Close
-            // 
-            this.ControlBox_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ControlBox_Close.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.ControlBox_Close.HoverState.Parent = this.ControlBox_Close;
-            this.ControlBox_Close.IconColor = System.Drawing.Color.White;
-            this.ControlBox_Close.Location = new System.Drawing.Point(849, 1);
-            this.ControlBox_Close.Name = "ControlBox_Close";
-            this.ControlBox_Close.ShadowDecoration.Parent = this.ControlBox_Close;
-            this.ControlBox_Close.Size = new System.Drawing.Size(37, 35);
-            this.ControlBox_Close.TabIndex = 0;
-            // 
-            // DragMain
-            // 
-            this.DragMain.TargetControl = this.PHeader;
-            // 
-            // PMain
-            // 
-            this.PMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PMain.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.PMain.Location = new System.Drawing.Point(94, 40);
-            this.PMain.Name = "PMain";
-            this.PMain.Size = new System.Drawing.Size(886, 610);
-            this.PMain.TabIndex = 2;
-            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,11 +267,12 @@ namespace GUI
             this.Controls.Add(this.PLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FMain";
             this.Load += new System.EventHandler(this.FMain_Load);
             this.PLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

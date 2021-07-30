@@ -33,5 +33,9 @@ namespace BUS
         {
             DAO_BillInfo.Instance.UpdateBillInfo(count, id);
         }
+        public void DelBillInfo(int idBill, int idFood)
+        {
+            DAO_BillInfo.Instance.DelBillInfo(idBill, idFood);
+        }
     }
 }

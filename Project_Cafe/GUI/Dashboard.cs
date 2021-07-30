@@ -62,7 +62,8 @@ namespace GUI
             Order order = new Order();
             order.NameTable = "Bàn "+name;
             order.IdTable = idtable;
-            order.LoadBill();
+            order.LoadBillInfo();
+            //order.LoadBill();
             order.LoadData();
             showControl(order);
         }

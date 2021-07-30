@@ -37,6 +37,7 @@ namespace DAO
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@status", SqlDbType.NVarChar).Value = status;
                 cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch(Exception)
             {

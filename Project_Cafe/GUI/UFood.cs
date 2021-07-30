@@ -71,7 +71,7 @@ namespace GUI
                     BUS_TableFood.Instance.UpdateStatusTable(IdTable, "Có người");
                 }
 
-                Order.Instance.LoadBill();
+                
                 
 
             }

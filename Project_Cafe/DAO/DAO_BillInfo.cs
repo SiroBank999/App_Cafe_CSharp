@@ -26,6 +26,23 @@ namespace DAO
                 return instance;
             }
         }
+        public void DelBillInfo(int idBill,int idFood)
+        {
+            string query = "DelBillInfo @idBill, @idFood";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@idBill", SqlDbType.Int).Value = idBill;
+                cmd.Parameters.Add("@idFood", SqlDbType.Int).Value = idFood;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         public void UpdateBillInfo(int count,int id)
         {
             string query = "UpdateBillInfo @count, @id";
@@ -36,6 +53,7 @@ namespace DAO
                 cmd.Parameters.Add("@count", SqlDbType.Int).Value = count;
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch(Exception)
             {
@@ -82,6 +100,7 @@ namespace DAO
                 cmd.Parameters.Add("@idFood", SqlDbType.Int).Value = idFood;
                 cmd.Parameters.Add("@count", SqlDbType.Int).Value = count;
                 cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch(Exception)
             {
