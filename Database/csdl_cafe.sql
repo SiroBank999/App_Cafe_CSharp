@@ -69,6 +69,17 @@ CREATE TABLE BillInfo
 	FOREIGN KEY (idFood) REFERENCES dbo.Food(id)
 )
 GO
+CREATE TABLE Staff (
+		id INT IDENTITY PRIMARY KEY NOT NULL,
+		FullName NVARCHAR(100) NOT NULL ,
+		Phone NVARCHAR(12) ,
+		Address NVARCHAR(100),
+		NameLevel nvarchar(100) not null ,
+		
+		
+)
+
+GO
 INSERT INTO Account(UserName,DisplayName,PassWord,Type) VALUES('admin','Nguyen Van Nhon','123456',1)
 GO
 --THÊM DANH MỤC
@@ -179,4 +190,38 @@ AS
 UPDATE BillInfo SET count =@count WHERE id = @id
 UpdateBillInfo 9, 1
 
+-- Danh sách nhân viên 
+CREATE PROC ListStaff 
+AS
+	Select * from Staff
+-- Thêm nhân viên 
+CREATE PROC InsertStaff
+@fullname Nvarchar(100) , 
+@phone Nvarchar(12) ,
+@address Nvarchar(100) ,
+@namelevel  nvarchar(100)
 
+AS
+	INSERT INTO Staff(FullName,Phone,Address ,NameLevel) VALUES (@fullname,@phone,@address,@namelevel)
+
+	INSERT INTO Staff(FullName,Phone,Address ,idlevel) VALUES ('abc','012454645','HUE',1)
+		SELECT * FROM STAFF
+CREATE PROC UpdateStaff 
+@id int ,
+@fullname Nvarchar(100) , 
+@phone Nvarchar(12) ,
+@address Nvarchar(100) ,
+@namelevel  nvarchar(100)
+as 
+	UPDATE Staff SET FullName = @fullname , Phone =@phone, Address = @address ,NameLevel = @namelevel where id = @id
+
+	UpdateStaff  1,'KHANH','08888888','HUE','LE TAN'
+
+CREATE PROC DeleteStaff
+@id int 
+as
+	DELETE staff where id = @id 
+CREATE PROC FindStaff
+@fullname Nvarchar(100) 
+as
+select * from Staff WHERE FullName like '%'+@fullname+'%'

@@ -48,6 +48,7 @@
     <Compile Include="BillInfo.cs" />
     <Compile Include="Foods.cs" />
     <Compile Include="ItemBill.cs" />
+    <Compile Include="Staff.cs" />
     <Compile Include="TableFood.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

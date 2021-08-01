@@ -69,6 +69,7 @@ namespace GUI
 
         private void btnListUser_Click(object sender, EventArgs e)
         {
+            StaffManager manager = new StaffManager();
             btnListUser.Checked = true;
             if (btnListUser.Checked == true)
             {
@@ -76,6 +77,7 @@ namespace GUI
                 btnHome.Checked = false;
                 btnListSanPham.Checked = false;
             }
+            showControl(manager);
         }
     }
 }

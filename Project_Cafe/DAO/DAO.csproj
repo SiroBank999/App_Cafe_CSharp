@@ -46,6 +46,7 @@
     <Compile Include="DAO_BillInfo.cs" />
     <Compile Include="DAO_Food.cs" />
     <Compile Include="DAO_ItemBill.cs" />
+    <Compile Include="DAO_Staff.cs" />
     <Compile Include="DAO_TableFood.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
