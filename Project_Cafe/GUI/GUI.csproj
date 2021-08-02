@@ -104,6 +104,12 @@
     <Compile Include="RPBill.Designer.cs">
       <DependentUpon>RPBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StaffManager.Designer.cs">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UFood.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <EmbeddedResource Include="PRBill.rdlc" />
     <EmbeddedResource Include="RPBill.resx">
       <DependentUpon>RPBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffManager.resx">
+      <DependentUpon>StaffManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UFood.resx">
       <DependentUpon>UFood.cs</DependentUpon>
@@ -189,6 +198,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\find-my-friend.png" />
+    <None Include="Images\add-user.png" />
+    <None Include="Images\icons8-add-user-male-30.png" />
+    <None Include="Images\icons8-denied-30.png" />
+    <None Include="Images\icons8-support-50.png" />
     <Content Include="Images\icons8_add_24px.png" />
     <Content Include="Images\icons8_bar_chart_50px_7.png" />
     <Content Include="Images\icons8_cafe_100px_2.png" />
