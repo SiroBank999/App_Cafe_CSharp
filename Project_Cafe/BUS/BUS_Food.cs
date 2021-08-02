@@ -28,5 +28,13 @@ namespace BUS
         {
             return DAO_Food.Instance.getListFood();
         }
+        public List<Foods> ListFoodByCate(string name)
+        {
+            return DAO_Food.Instance.ListFoodByCate(name);
+        }
+        public List<Foods> ListFoodByPrice(int price)
+        {
+            return DAO_Food.Instance.ListFoodByPrice(price);
+        }
     }
 }

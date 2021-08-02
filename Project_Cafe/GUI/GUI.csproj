@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillManger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillManger.Designer.cs">
+      <DependentUpon>BillManger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Custom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     <Compile Include="FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMoveTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMoveTable.Designer.cs">
+      <DependentUpon>FMoveTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,7 +119,7 @@
     <Compile Include="StaffManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StaffManager.Designer.cs">
+    <Compile Include="StaffManager.designer.cs">
       <DependentUpon>StaffManager.cs</DependentUpon>
     </Compile>
     <Compile Include="UFood.cs">
@@ -130,6 +142,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BillManger.resx">
+      <DependentUpon>BillManger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Custom.resx">
       <DependentUpon>Custom.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMoveTable.resx">
+      <DependentUpon>FMoveTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRBill.rdlc" />
     <EmbeddedResource Include="RPBill.resx">
@@ -198,12 +216,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\find-my-friend.png" />
-    <None Include="Images\add-user.png" />
-    <None Include="Images\icons8-add-user-male-30.png" />
-    <None Include="Images\icons8-denied-30.png" />
-    <None Include="Images\icons8-support-50.png" />
     <Content Include="Images\icons8_add_24px.png" />
+    <Content Include="Images\icons8_arrow_48px.png" />
     <Content Include="Images\icons8_bar_chart_50px_7.png" />
     <Content Include="Images\icons8_cafe_100px_2.png" />
     <Content Include="Images\icons8_cafe_80px.png" />
@@ -216,9 +230,11 @@
     <Content Include="Images\icons8_monitor_24px.png" />
     <Content Include="Images\icons8_password_24px_1.png" />
     <Content Include="Images\icons8_registration_50px.png" />
+    <Content Include="Images\icons8_search_24px_1.png" />
     <Content Include="Images\icons8_shutdown_24px.png" />
     <Content Include="Images\icons8_squared_menu_50px_3.png" />
     <Content Include="Images\icons8_squared_menu_50px_4.png" />
+    <Content Include="Images\icons8_sync_24px_1.png" />
     <Content Include="Images\icons8_table_top_view_50px.png" />
     <Content Include="Images\icons8_user_shield_24px.png" />
     <Content Include="Images\icons8_warehouse_50px.png" />
@@ -230,6 +246,7 @@
     <Content Include="Images\Uploads\cafe_sua.jpg" />
     <Content Include="Images\Uploads\coca.jpg" />
     <Content Include="Images\Uploads\gakho.jpg" />
+    <None Include="Images\Uploads\gifCafe.gif" />
     <Content Include="Images\Uploads\nuoc.jpg" />
     <Content Include="Images\Uploads\pepsi.jpg" />
     <Content Include="Images\Uploads\sua_chua.jpg" />

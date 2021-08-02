@@ -30,20 +30,20 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbNameTable = new System.Windows.Forms.Label();
             this.gunaElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnCheckout = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnTam = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnMove = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbPrice = new System.Windows.Forms.ComboBox();
             this.FLFood = new System.Windows.Forms.FlowLayoutPanel();
             this.LBTotal = new System.Windows.Forms.Label();
             this.LBMoney = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace GUI
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnPrintItem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
@@ -87,28 +87,29 @@ namespace GUI
             this.gunaElipse.BorderRadius = 35;
             this.gunaElipse.TargetControl = this.panel1;
             // 
-            // guna2GradientButton1
+            // btnCheckout
             // 
-            this.guna2GradientButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.DisabledState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(267, 569);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(102, 33);
-            this.guna2GradientButton1.TabIndex = 6;
-            this.guna2GradientButton1.Text = "Tính tiền";
+            this.btnCheckout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCheckout.CheckedState.Parent = this.btnCheckout;
+            this.btnCheckout.CustomImages.Parent = this.btnCheckout;
+            this.btnCheckout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCheckout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCheckout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCheckout.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCheckout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCheckout.DisabledState.Parent = this.btnCheckout;
+            this.btnCheckout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCheckout.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCheckout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCheckout.ForeColor = System.Drawing.Color.White;
+            this.btnCheckout.HoverState.Parent = this.btnCheckout;
+            this.btnCheckout.Location = new System.Drawing.Point(267, 560);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.ShadowDecoration.Parent = this.btnCheckout;
+            this.btnCheckout.Size = new System.Drawing.Size(102, 33);
+            this.btnCheckout.TabIndex = 6;
+            this.btnCheckout.Text = "Tính tiền";
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // btnTam
             // 
@@ -126,7 +127,7 @@ namespace GUI
             this.btnTam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTam.ForeColor = System.Drawing.Color.White;
             this.btnTam.HoverState.Parent = this.btnTam;
-            this.btnTam.Location = new System.Drawing.Point(159, 569);
+            this.btnTam.Location = new System.Drawing.Point(159, 560);
             this.btnTam.Name = "btnTam";
             this.btnTam.ShadowDecoration.Parent = this.btnTam;
             this.btnTam.Size = new System.Drawing.Size(102, 33);
@@ -134,60 +135,63 @@ namespace GUI
             this.btnTam.Text = "Tạm tính";
             this.btnTam.Click += new System.EventHandler(this.btnTam_Click);
             // 
-            // guna2GradientButton3
+            // btnMove
             // 
-            this.guna2GradientButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2GradientButton3.CheckedState.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.CustomImages.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton3.DisabledState.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.Navy;
-            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.HoverState.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.Location = new System.Drawing.Point(18, 569);
-            this.guna2GradientButton3.Name = "guna2GradientButton3";
-            this.guna2GradientButton3.ShadowDecoration.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.Size = new System.Drawing.Size(102, 33);
-            this.guna2GradientButton3.TabIndex = 8;
-            this.guna2GradientButton3.Text = "Chuyển bàn";
+            this.btnMove.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnMove.CheckedState.Parent = this.btnMove;
+            this.btnMove.CustomImages.Parent = this.btnMove;
+            this.btnMove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMove.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMove.DisabledState.Parent = this.btnMove;
+            this.btnMove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnMove.FillColor2 = System.Drawing.Color.Navy;
+            this.btnMove.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMove.ForeColor = System.Drawing.Color.White;
+            this.btnMove.HoverState.Parent = this.btnMove;
+            this.btnMove.Location = new System.Drawing.Point(18, 560);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.ShadowDecoration.Parent = this.btnMove;
+            this.btnMove.Size = new System.Drawing.Size(102, 33);
+            this.btnMove.TabIndex = 8;
+            this.btnMove.Text = "Chuyển bàn";
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
-            // comboBox1
+            // cbCategory
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ItemHeight = 17;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategory.ItemHeight = 17;
+            this.cbCategory.Items.AddRange(new object[] {
             "Cafe",
             "Cocktail",
             "Khác",
             "Nước",
             "Thức ăn"});
-            this.comboBox1.Location = new System.Drawing.Point(18, 54);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 25);
-            this.comboBox1.TabIndex = 12;
-            this.comboBox1.Text = "Theo loại";
+            this.cbCategory.Location = new System.Drawing.Point(18, 54);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(162, 25);
+            this.cbCategory.TabIndex = 12;
+            this.cbCategory.Text = "Theo loại";
+            this.cbCategory.SelectedValueChanged += new System.EventHandler(this.cbCategory_SelectedValueChanged);
             // 
-            // comboBox2
+            // cbPrice
             // 
-            this.comboBox2.CausesValidation = false;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 17;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Dưới 100K ",
-            "100K - 250K",
-            "Trên 250K"});
-            this.comboBox2.Location = new System.Drawing.Point(201, 54);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(168, 25);
-            this.comboBox2.TabIndex = 13;
-            this.comboBox2.Text = "Theo giá";
+            this.cbPrice.CausesValidation = false;
+            this.cbPrice.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPrice.FormattingEnabled = true;
+            this.cbPrice.ItemHeight = 17;
+            this.cbPrice.Items.AddRange(new object[] {
+            "Dưới 20K",
+            "20K - 50K",
+            "Trên 50K"});
+            this.cbPrice.Location = new System.Drawing.Point(201, 54);
+            this.cbPrice.Name = "cbPrice";
+            this.cbPrice.Size = new System.Drawing.Size(168, 25);
+            this.cbPrice.TabIndex = 13;
+            this.cbPrice.Text = "Theo giá";
+            this.cbPrice.SelectedValueChanged += new System.EventHandler(this.cbPrice_SelectedValueChanged);
             // 
             // FLFood
             // 
@@ -224,8 +228,8 @@ namespace GUI
             // InfoBillGird
             // 
             this.InfoBillGird.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.InfoBillGird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.InfoBillGird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.InfoBillGird.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.InfoBillGird.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.InfoBillGird.BackgroundColor = System.Drawing.Color.White;
@@ -233,14 +237,14 @@ namespace GUI
             this.InfoBillGird.CausesValidation = false;
             this.InfoBillGird.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.InfoBillGird.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InfoBillGird.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InfoBillGird.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.InfoBillGird.ColumnHeadersHeight = 30;
             this.InfoBillGird.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColNameFood,
@@ -248,14 +252,14 @@ namespace GUI
             this.Column3,
             this.Column4,
             this.btnXoa});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InfoBillGird.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InfoBillGird.DefaultCellStyle = dataGridViewCellStyle23;
             this.InfoBillGird.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.InfoBillGird.EnableHeadersVisualStyles = false;
             this.InfoBillGird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
@@ -264,18 +268,18 @@ namespace GUI
             this.InfoBillGird.MultiSelect = false;
             this.InfoBillGird.Name = "InfoBillGird";
             this.InfoBillGird.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InfoBillGird.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InfoBillGird.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.InfoBillGird.RowHeadersVisible = false;
             this.InfoBillGird.RowHeadersWidth = 50;
             this.InfoBillGird.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.InfoBillGird.Size = new System.Drawing.Size(351, 212);
+            this.InfoBillGird.Size = new System.Drawing.Size(351, 197);
             this.InfoBillGird.TabIndex = 18;
             this.InfoBillGird.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.White;
             this.InfoBillGird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -309,17 +313,17 @@ namespace GUI
             // 
             // Column2
             // 
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Format = "N0";
+            dataGridViewCellStyle21.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle21;
             this.Column2.HeaderText = "Số lượng";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Format = "C0";
+            dataGridViewCellStyle22.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle22;
             this.Column3.FillWeight = 78.6719F;
             this.Column3.HeaderText = "Đơn giá";
             this.Column3.Name = "Column3";
@@ -341,29 +345,30 @@ namespace GUI
             this.btnXoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btnXoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // guna2GradientButton4
+            // btnPrintItem
             // 
-            this.guna2GradientButton4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2GradientButton4.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.CheckedState.Parent = this.guna2GradientButton4;
-            this.guna2GradientButton4.CustomImages.Parent = this.guna2GradientButton4;
-            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton4.DisabledState.Parent = this.guna2GradientButton4;
-            this.guna2GradientButton4.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton4.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientButton4.HoverState.Parent = this.guna2GradientButton4;
-            this.guna2GradientButton4.Location = new System.Drawing.Point(18, 531);
-            this.guna2GradientButton4.Name = "guna2GradientButton4";
-            this.guna2GradientButton4.ShadowDecoration.Parent = this.guna2GradientButton4;
-            this.guna2GradientButton4.Size = new System.Drawing.Size(102, 33);
-            this.guna2GradientButton4.TabIndex = 19;
-            this.guna2GradientButton4.Text = "In tem";
+            this.btnPrintItem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPrintItem.BorderColor = System.Drawing.Color.White;
+            this.btnPrintItem.CheckedState.Parent = this.btnPrintItem;
+            this.btnPrintItem.CustomImages.Parent = this.btnPrintItem;
+            this.btnPrintItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrintItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrintItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrintItem.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrintItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrintItem.DisabledState.Parent = this.btnPrintItem;
+            this.btnPrintItem.FillColor = System.Drawing.Color.White;
+            this.btnPrintItem.FillColor2 = System.Drawing.Color.White;
+            this.btnPrintItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrintItem.ForeColor = System.Drawing.Color.Black;
+            this.btnPrintItem.HoverState.Parent = this.btnPrintItem;
+            this.btnPrintItem.Location = new System.Drawing.Point(18, 520);
+            this.btnPrintItem.Name = "btnPrintItem";
+            this.btnPrintItem.ShadowDecoration.Parent = this.btnPrintItem;
+            this.btnPrintItem.Size = new System.Drawing.Size(102, 33);
+            this.btnPrintItem.TabIndex = 19;
+            this.btnPrintItem.Text = "In tem";
+            this.btnPrintItem.Click += new System.EventHandler(this.btnPrintItem_Click);
             // 
             // panel2
             // 
@@ -371,7 +376,7 @@ namespace GUI
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.LBTotal);
             this.panel2.Controls.Add(this.LBMoney);
-            this.panel2.Location = new System.Drawing.Point(159, 531);
+            this.panel2.Location = new System.Drawing.Point(159, 520);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(210, 34);
             this.panel2.TabIndex = 20;
@@ -394,17 +399,17 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.guna2GradientButton4);
+            this.Controls.Add(this.btnPrintItem);
             this.Controls.Add(this.InfoBillGird);
             this.Controls.Add(this.FLFood);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.guna2GradientButton3);
+            this.Controls.Add(this.cbPrice);
+            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.btnMove);
             this.Controls.Add(this.btnTam);
-            this.Controls.Add(this.guna2GradientButton1);
+            this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.panel1);
             this.Name = "Order";
-            this.Size = new System.Drawing.Size(386, 610);
+            this.Size = new System.Drawing.Size(386, 600);
             this.Load += new System.EventHandler(this.Order_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -420,17 +425,17 @@ namespace GUI
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Elipse gunaElipse;
         private System.Windows.Forms.Label lbNameTable;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnCheckout;
         private Guna.UI2.WinForms.Guna2GradientButton btnTam;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private Guna.UI2.WinForms.Guna2GradientButton btnMove;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox cbPrice;
         private System.Windows.Forms.FlowLayoutPanel FLFood;
         private System.Windows.Forms.Label LBTotal;
         private System.Windows.Forms.Label LBMoney;
         private Guna.UI2.WinForms.Guna2DataGridView InfoBillGird;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton4;
+        private Guna.UI2.WinForms.Guna2GradientButton btnPrintItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNameFood;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

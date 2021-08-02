@@ -21,6 +21,10 @@ namespace BUS
                 return instance;
             } 
         }
+        public void UpdateBill(int idTableTo, int idBill)
+        {
+            DAO_Bill.Instance.UpdateBill(idTableTo, idBill);
+        }
         public Bill getBillByIdTable(int id)
         {
             return DAO_Bill.Instance.getBillByIdTable(id);
@@ -28,6 +32,18 @@ namespace BUS
         public void InsertBill(int id)
         {
             DAO_Bill.Instance.InsertBill(id);
+        }
+        public void CheckOutBill(int id,float total)
+        {
+            DAO_Bill.Instance.CheckOutBill(id,total);
+        }
+        public List<Bill> getBillByDate(DateTime fromdate, DateTime todate)
+        {
+            return DAO_Bill.Instance.getBillByDate(fromdate, todate);
+        }
+        public List<Bill> SearchBillByDate(DateTime fromdate, DateTime todate, int name)
+        {
+            return DAO_Bill.Instance.SearchBillByDate(fromdate, todate,name);
         }
     }
 }

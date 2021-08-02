@@ -30,5 +30,9 @@ namespace BUS
         {
             DAO_TableFood.Instance.UpdateStatusTable(id, status);
         }
+        public void MoveTable(int idTable, string status, int idTableTo, int idBill, string statusTo, int idTableToCurrent)
+        {
+            DAO_TableFood.Instance.MoveTable(idTable, status, idTableTo, idBill, statusTo, idTableToCurrent);
+        }
     }
 }

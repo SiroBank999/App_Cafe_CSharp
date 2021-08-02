@@ -70,15 +70,7 @@ namespace GUI
                     BUS_BillInfo.Instance.InsertBillInfo(idbill, IdFood, 1);
                     BUS_TableFood.Instance.UpdateStatusTable(IdTable, "Có người");
                 }
-
-                
-                
-
             }
-            
-           
-
-
         }
     }
 }

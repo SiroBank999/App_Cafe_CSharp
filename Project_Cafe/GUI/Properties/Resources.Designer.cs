@@ -63,19 +63,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_user {
+        internal static System.Drawing.Bitmap gifCafe {
             get {
-                object obj = ResourceManager.GetObject("add-user", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap find_my_friend {
-            get {
-                object obj = ResourceManager.GetObject("find-my-friend", resourceCulture);
+                object obj = ResourceManager.GetObject("gifCafe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +83,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_add_user_male_30 {
+        internal static System.Drawing.Bitmap icons8_arrow_48px {
             get {
-                object obj = ResourceManager.GetObject("icons8-add-user-male-30", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_arrow_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,16 +173,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_denied_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-denied-30", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_features_list_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_features_list_50px", resourceCulture);
@@ -243,6 +223,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_24px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_search_24px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_squared_menu_50px_3 {
             get {
                 object obj = ResourceManager.GetObject("icons8_squared_menu_50px_3", resourceCulture);
@@ -263,9 +253,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_support_50 {
+        internal static System.Drawing.Bitmap icons8_sync_24px_1 {
             get {
-                object obj = ResourceManager.GetObject("icons8-support-50", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_sync_24px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

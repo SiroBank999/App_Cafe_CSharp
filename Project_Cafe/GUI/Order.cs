@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace GUI
         {
             try
             {
-                string name = InfoBillGird.Rows[e.RowIndex].Cells["ColNameFood"].FormattedValue.ToString();
+                string name = Convert.ToString(InfoBillGird.Rows[e.RowIndex].Cells["ColNameFood"].FormattedValue.ToString());
                 List<Foods> foods = BUS_Food.Instance.getListFood();
                 Bill bill = BUS_Bill.Instance.getBillByIdTable(IdTable);
                 int idBill = bill.Id;
@@ -75,7 +76,7 @@ namespace GUI
 
         public void LoadData()
         {
-            lbNameTable.Text = NameTable;
+            lbNameTable.Text = "Bàn " + NameTable;
         }
         //public void LoadBill()
         //{
@@ -118,6 +119,42 @@ namespace GUI
           
             FLFood.Controls.Add(control);
         }
+        public void ListFoodByPrice(int price)
+        {
+            FLFood.Controls.Clear();
+            List<Foods> listfood = BUS_Food.Instance.ListFoodByPrice(price);
+            foreach (Foods food in listfood)
+            {
+                UFood ufood = new UFood();
+                ufood.IdFood = food.IdFood;
+                ufood.IdTable = IdTable;
+                ufood.ImageFood = food.ImageFood;
+                ufood.NameFood = food.NameFood;
+                ufood.Label_.Click += LAddFood_Click;
+                ufood.Price = food.PriceFood.ToString("C").Replace(",00", "");
+                ufood.getLoadFood();
+
+                showControl(ufood);
+            }
+        }
+        public void ListFoodByCate(string name)
+        {
+            FLFood.Controls.Clear();
+            List<Foods> listfood = BUS_Food.Instance.ListFoodByCate(name);
+            foreach (Foods food in listfood)
+            {
+                UFood ufood = new UFood();
+                ufood.IdFood = food.IdFood;
+                ufood.IdTable = IdTable;
+                ufood.ImageFood = food.ImageFood;
+                ufood.NameFood = food.NameFood;
+                ufood.Label_.Click += LAddFood_Click;
+                ufood.Price = food.PriceFood.ToString("C").Replace(",00", "");
+                ufood.getLoadFood();
+
+                showControl(ufood);
+            }
+        }
         public void OrderLoad()
         {
             FLFood.Controls.Clear();
@@ -148,6 +185,63 @@ namespace GUI
             List<ItemBill> listitems = BUS_ItemBill.Instance.getListItemByTable(IdTable);
             RPBill pBill = new RPBill(listitems);
             pBill.Show();
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            List<ItemBill> listitems = BUS_ItemBill.Instance.getListItemByTable(IdTable);
+            float total = 0f;
+            foreach (ItemBill item in listitems)
+            {
+                total += Convert.ToInt32(item.Price * item.Count);
+            }
+            Bill bill = BUS_Bill.Instance.getBillByIdTable(IdTable);
+            int idBill = bill.Id;
+            BUS_Bill.Instance.CheckOutBill(idBill,total);
+            BUS_TableFood.Instance.UpdateStatusTable(IdTable, "Trống");
+            LoadBillInfo();
+
+        }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            Bill bill = BUS_Bill.Instance.getBillByIdTable(IdTable);
+            int idBill = bill.Id;
+            FMoveTable fMove = new FMoveTable(NameTable);
+            fMove.IdTable = IdTable;
+            fMove.IdBill = idBill;
+            fMove.ShowDialog();
+        }
+
+        private void btnPrintItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCategory_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ListFoodByCate(cbCategory.SelectedItem.ToString()); 
+        }
+
+        private void cbPrice_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string type = cbPrice.SelectedItem.ToString();
+            int price = 0;
+            switch (type)
+            {
+                case "Dưới 20K":
+                    price = 19999;
+                    break;
+                case "20K - 50K":
+                    price = 20000;
+                    break;
+                case "Trên 50K":
+                    price = 50001;
+                    break;
+                default:
+                    break;
+            }
+            ListFoodByPrice(price);
         }
     }
 }

@@ -22,6 +22,7 @@ namespace GUI
         }
         public void LoadTable()
         {
+            pTable.Controls.Clear();
             List<TableFood> tableFoods = BUS_TableFood.Instance.getTableFood();
             foreach (TableFood table in tableFoods)
             {
@@ -55,12 +56,15 @@ namespace GUI
                 
             }
         }
+    
+     
+
         public void btn_Click(object sender, EventArgs e)
         {
             string name = ((sender as Button).Tag as TableFood).Name;
             int idtable = ((sender as Button).Tag as TableFood).Id;
             Order order = new Order();
-            order.NameTable = "Bàn "+name;
+            order.NameTable = name;
             order.IdTable = idtable;
             order.LoadBillInfo();
             //order.LoadBill();
@@ -78,6 +82,16 @@ namespace GUI
             pOrder.Controls.Clear();
             control.Dock = DockStyle.Fill;
             pOrder.Controls.Add(control);
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+
+        private void LBLoad_Click(object sender, EventArgs e)
+        {
+            LoadTable();
         }
     }
 }

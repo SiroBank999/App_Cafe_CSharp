@@ -356,7 +356,7 @@ namespace GUI
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Image = global::GUI.Properties.Resources.icons8_add_user_male_30;
+            this.btnThem.Image = global::GUI.Properties.Resources.icons8_user_shield_24px;
             this.btnThem.Location = new System.Drawing.Point(809, 61);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
@@ -377,7 +377,7 @@ namespace GUI
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Image = global::GUI.Properties.Resources.icons8_support_50;
+            this.btnSua.Image = global::GUI.Properties.Resources.icons8_user_shield_24px;
             this.btnSua.Location = new System.Drawing.Point(809, 125);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
@@ -398,7 +398,7 @@ namespace GUI
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_denied_30;
+            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_user_shield_24px;
             this.btnXoa.Location = new System.Drawing.Point(809, 188);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;

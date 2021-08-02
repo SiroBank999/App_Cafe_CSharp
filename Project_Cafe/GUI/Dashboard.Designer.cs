@@ -42,6 +42,7 @@ namespace GUI
             this.label6 = new System.Windows.Forms.Label();
             this.pHeaderTable = new System.Windows.Forms.Panel();
             this.gunaElipseHeaderTable = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.LBLoad = new System.Windows.Forms.Label();
             this.pHeaderTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,16 +55,17 @@ namespace GUI
             this.pTable.Location = new System.Drawing.Point(0, 51);
             this.pTable.Name = "pTable";
             this.pTable.Padding = new System.Windows.Forms.Padding(5);
-            this.pTable.Size = new System.Drawing.Size(497, 430);
+            this.pTable.Size = new System.Drawing.Size(497, 545);
             this.pTable.TabIndex = 0;
             // 
             // pOrder
             // 
+            this.pOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pOrder.BackColor = System.Drawing.SystemColors.Control;
-            this.pOrder.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pOrder.Location = new System.Drawing.Point(503, 0);
+            this.pOrder.Location = new System.Drawing.Point(500, 0);
             this.pOrder.Name = "pOrder";
-            this.pOrder.Size = new System.Drawing.Size(386, 520);
+            this.pOrder.Size = new System.Drawing.Size(386, 600);
             this.pOrder.TabIndex = 1;
             // 
             // btnTang_2
@@ -119,7 +121,7 @@ namespace GUI
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(9, 494);
+            this.label1.Location = new System.Drawing.Point(9, 609);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5, 5, 15, 0);
             this.label1.Size = new System.Drawing.Size(20, 18);
@@ -130,7 +132,7 @@ namespace GUI
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightGreen;
-            this.label2.Location = new System.Drawing.Point(108, 494);
+            this.label2.Location = new System.Drawing.Point(108, 609);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5, 5, 15, 0);
             this.label2.Size = new System.Drawing.Size(20, 18);
@@ -141,7 +143,7 @@ namespace GUI
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(206, 494);
+            this.label3.Location = new System.Drawing.Point(206, 609);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(5, 5, 15, 0);
             this.label3.Size = new System.Drawing.Size(20, 18);
@@ -151,7 +153,7 @@ namespace GUI
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 497);
+            this.label4.Location = new System.Drawing.Point(35, 612);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 7;
@@ -161,7 +163,7 @@ namespace GUI
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(134, 497);
+            this.label5.Location = new System.Drawing.Point(134, 612);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 8;
@@ -171,7 +173,7 @@ namespace GUI
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(232, 497);
+            this.label6.Location = new System.Drawing.Point(232, 612);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 9;
@@ -194,12 +196,24 @@ namespace GUI
             this.gunaElipseHeaderTable.BorderRadius = 35;
             this.gunaElipseHeaderTable.TargetControl = this.pHeaderTable;
             // 
+            // LBLoad
+            // 
+            this.LBLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBLoad.Image = global::GUI.Properties.Resources.icons8_sync_24px_1;
+            this.LBLoad.Location = new System.Drawing.Point(686, 603);
+            this.LBLoad.Name = "LBLoad";
+            this.LBLoad.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
+            this.LBLoad.Size = new System.Drawing.Size(41, 27);
+            this.LBLoad.TabIndex = 11;
+            this.LBLoad.Click += new System.EventHandler(this.LBLoad_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.Controls.Add(this.LBLoad);
             this.Controls.Add(this.pHeaderTable);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -210,7 +224,7 @@ namespace GUI
             this.Controls.Add(this.pOrder);
             this.Controls.Add(this.pTable);
             this.Name = "Dashboard";
-            this.Size = new System.Drawing.Size(889, 520);
+            this.Size = new System.Drawing.Size(889, 635);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.pHeaderTable.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -232,5 +246,6 @@ namespace GUI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pHeaderTable;
         private Guna.UI2.WinForms.Guna2Elipse gunaElipseHeaderTable;
+        private System.Windows.Forms.Label LBLoad;
     }
 }

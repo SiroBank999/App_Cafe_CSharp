@@ -3,10 +3,3 @@ C:\Users\Admin\source\repos\Project_Cafe\DTO\bin\Debug\DTO.pdb
 C:\Users\Admin\source\repos\Project_Cafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\Project_Cafe\DTO\obj\Debug\DTO.dll
 C:\Users\Admin\source\repos\Project_Cafe\DTO\obj\Debug\DTO.pdb
-C:\Users\Admin\source\repos\Project_Cafe\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
-E:\App_Cafe_CSharp\Project_Cafe\DTO\bin\Debug\DTO.dll
-E:\App_Cafe_CSharp\Project_Cafe\DTO\bin\Debug\DTO.pdb
-E:\App_Cafe_CSharp\Project_Cafe\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
-E:\App_Cafe_CSharp\Project_Cafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-E:\App_Cafe_CSharp\Project_Cafe\DTO\obj\Debug\DTO.dll
-E:\App_Cafe_CSharp\Project_Cafe\DTO\obj\Debug\DTO.pdb

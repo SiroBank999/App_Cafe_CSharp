@@ -12,12 +12,12 @@ namespace ConsoleAppCafe
     {
         static void Main(string[] args)
         {
-            Bill bills = DAO_Bill.Instance.getBillByIdTable(2);
-            
-          
-                Console.WriteLine(bills.DateCheckIn);
-           
-            Console.ReadLine();
+            List<Bill> bills = DAO_Bill.Instance.getBillByDate(DateTime.Now, DateTime.Now);
+            int no = 1;
+            foreach (Bill bill in bills)
+            {
+             
+            }
         }
     }
 }

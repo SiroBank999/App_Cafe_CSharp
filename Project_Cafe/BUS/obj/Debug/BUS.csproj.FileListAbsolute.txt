@@ -9,14 +9,3 @@ C:\Users\Admin\source\repos\Project_Cafe\BUS\obj\Debug\BUS.csproj.CoreCompileInp
 C:\Users\Admin\source\repos\Project_Cafe\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\Admin\source\repos\Project_Cafe\BUS\obj\Debug\BUS.dll
 C:\Users\Admin\source\repos\Project_Cafe\BUS\obj\Debug\BUS.pdb
-E:\App_Cafe_CSharp\Project_Cafe\BUS\bin\Debug\BUS.dll
-E:\App_Cafe_CSharp\Project_Cafe\BUS\bin\Debug\BUS.pdb
-E:\App_Cafe_CSharp\Project_Cafe\BUS\bin\Debug\DAO.dll
-E:\App_Cafe_CSharp\Project_Cafe\BUS\bin\Debug\DTO.dll
-E:\App_Cafe_CSharp\Project_Cafe\BUS\bin\Debug\DAO.pdb
-E:\App_Cafe_CSharp\Project_Cafe\BUS\bin\Debug\DTO.pdb
-E:\App_Cafe_CSharp\Project_Cafe\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
-E:\App_Cafe_CSharp\Project_Cafe\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
-E:\App_Cafe_CSharp\Project_Cafe\BUS\obj\Debug\BUS.csproj.CopyComplete
-E:\App_Cafe_CSharp\Project_Cafe\BUS\obj\Debug\BUS.dll
-E:\App_Cafe_CSharp\Project_Cafe\BUS\obj\Debug\BUS.pdb

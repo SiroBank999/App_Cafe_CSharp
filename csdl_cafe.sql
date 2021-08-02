@@ -1,4 +1,5 @@
-﻿CREATE DATABASE csdl_cafe
+﻿USE master
+CREATE DATABASE csdl_cafe
 GO
 USE csdl_cafe
 GO
@@ -52,8 +53,8 @@ CREATE TABLE Bill
 	DateCheckIn DATETIME NOT NULL DEFAULT GETDATE(),
 	DateCheckOut DATETIME,
 	idTable INT NOT NULL,
-	status INT NOT NULL DEFAULT 0 -- 1: đã thanh toán && 0: chưa thanh toán
-	
+	status INT NOT NULL DEFAULT 0, -- 1: đã thanh toán && 0: chưa thanh toán
+	total FLOAT NOT NULL DEFAULT 0 ,
 	FOREIGN KEY (idTable) REFERENCES dbo.TableFood(id)
 )
 GO
@@ -69,6 +70,7 @@ CREATE TABLE BillInfo
 	FOREIGN KEY (idFood) REFERENCES dbo.Food(id)
 )
 GO
+
 CREATE TABLE Staff (
 		id INT IDENTITY PRIMARY KEY NOT NULL,
 		FullName NVARCHAR(100) NOT NULL ,
@@ -78,13 +80,11 @@ CREATE TABLE Staff (
 		
 		
 )
-
 GO
+-- TÀI KHOẢN ADMIN
 INSERT INTO Account(UserName,DisplayName,PassWord,Type) VALUES('admin','Nguyen Van Nhon','123456',1)
 GO
 --THÊM DANH MỤC
-SELECT * FROM FoodCategory
-SELECT * FROM Food
 INSERT INTO FoodCategory(name) VALUES(N'Cafe')
 INSERT INTO FoodCategory(name) VALUES(N'Sữa')
 INSERT INTO FoodCategory(name) VALUES(N'Nước')
@@ -108,6 +108,7 @@ INSERT INTO Food(name,idCategory,price,image) VALUES(N'Gà khô',4,45000,N'gakho
 INSERT INTO Food(name,idCategory,price,image) VALUES(N'Xoài lắc',4,13000,N'xoai.jpg')
 
 GO
+-- KIỂM TRA ĐĂNG NHẬP
 CREATE PROC CheckAccount
 	@username NVARCHAR(100),
 	@password NVARCHAR(1000)
@@ -115,10 +116,8 @@ AS
 	BEGIN
 	SELECT * FROM Account WHERE UserName = @username AND PassWord = @password
 	END
-EXEC CheckAccount 'admin','123456'
 GO
-
---Thêm bàn
+--THÊM BÀN ĂN
 DECLARE @i INT = 1
 WHILE @i < =10
 BEGIN
@@ -126,86 +125,173 @@ BEGIN
 	SET @i = @i + 1
 
 END
+GO
+
 --PROC DANH SÁCH BÀN
 CREATE PROC ListTable
 AS
 SELECT * FROM TableFood
+GO
 
-ListTable
+-- CẬP NHẬT TRẠNG THÁI BÀN
 CREATE PROC UpdateStatusTable
 @id int,@status nvarchar(100)
 AS
 UPDATE TableFood SET status = @status WHERE id = @id
-UpdateStatusTable 10 ,N'Có người'
+GO
+
 --PROC DANH SÁCH MÓN
 CREATE PROC ListFood
 AS
 SELECT * FROM Food
-ListFood
+GO
 
 --PROC LẤY BILL THEO ID BÀN
 CREATE PROC getBillByIdTable
 @idTable int
 AS
 SELECT * FROM Bill WHERE idTable = @idTable AND status = 0
-getBillByIdTable 10
+GO
+
 -- THÊM HÓA ĐƠN
-SELECT * FROM Bill
 CREATE PROC InsertBill
 @idTable int
 AS
 INSERT INTO Bill(DateCheckIn,idTable,[status]) VALUES(GETDATE(),@idTable,0)
-InsertBill 10
---THƯỜNG
-INSERT INTO Bill(DateCheckIn,idTable,[status]) VALUES(GETDATE(),9,0) 
---THÊM CHI TIẾT HÓA ĐƠN
-INSERT INTO BillInfo(idBill,idFood,[count]) VALUES(1,1,2)
-INSERT INTO BillInfo(idBill,idFood,[count]) VALUES(1,3,2)
-INSERT INTO BillInfo(idBill,idFood,[count]) VALUES(2,4,2)
+GO
+
 --THÊM BILLINFO PROC
 CREATE PROC InsertBillInfo
 @idBill int, @idFood int, @count int
 AS
 INSERT INTO BillInfo(idBill,idFood,[count]) VALUES(@idBill,@idFood,@count)
-InsertBillInfo 3,5,5
+GO
+
 -- LẤY DANH SÁCH BILLINFO PROC
 CREATE PROC getBillInfoById
 @idBill int
 AS
 SELECT * FROM BillInfo WHERE idBill = @idBill
-getBillInfoById 1
+GO
+
 --ITEM BILL
 CREATE PROC ItemBill(
 	 @idTable int
 )
 AS
---SELECT * FROM BillInfo
+
 SELECT Food.name as NameFood, BillInfo.[count] as [SL],BillInfo.id as idBillInfo, Food.price as Price FROM Bill,BillInfo,Food 
 WHERE Bill.id = BillInfo.idBill AND BillInfo.idFood = Food.id  AND Bill.idTable = @idTable AND Bill.status = 0
-ItemBill 2
+GO
+
 -- CẬP NHẬT BILL INFO
 CREATE PROC UpdateBillInfo
 @count int ,@id int
 AS
 UPDATE BillInfo SET count =@count WHERE id = @id
-UpdateBillInfo 9, 1
+GO
 
--- Danh sách nhân viên 
+--XÓA BILL INFO
+CREATE PROC DelBillInfo
+@idBill int,@idFood int
+AS
+DELETE BillInfo WHERE idBill = @idBill AND idFood = @idFood
+GO
+--CHECKOUT
+CREATE PROC Checkout
+@idBill int,
+@total float
+AS
+UPDATE Bill SET status = 1 , total = @total , DateCheckOut = GETDATE() WHERE id = @idBill
+GO
+--CHUYỂN BÀN BÀN
+CREATE PROC MoveTable
+@idTable int,
+@status NVARCHAR(50),
+@idTableTo int,
+@idBill int,
+@statusTo NVARCHAR(50),
+@idTableToCurrent int
+AS
+UPDATE TableFood SET status = @status WHERE id = @idTable
+UPDATE Bill SET idTable = @idTableTo  WHERE id = @idBill
+UPDATE TableFood SET status = @statusTo WHERE id = @idTableToCurrent
+GO
+-- CẬP NHẬT BILL
+CREATE PROC UpdateBill
+@idTableTo int,
+@idBill int,
+@total float
+AS
+UPDATE Bill SET idTable = @idTableTo, total =@total  WHERE id = @idBill
+GO
+-- DANH SÁCH BILL THEO NGÀY THÁNG NĂM
+CREATE PROC ListBillByDate
+@fromDate varchar(100),
+@toDate varchar(100)
+AS
+SELECT Bill.id,Bill.DateCheckIn,Bill.DateCheckOut,TableFood.name,Bill.total 
+FROM Bill,TableFood 
+WHERE Bill.idTable = TableFood.id 
+AND Bill.status = 1
+AND Bill.DateCheckIn >= @fromDate
+AND Bill.DateCheckIn <= @toDate
+
+GO
+--TÌM KIẾM HÓA ĐƠN
+CREATE PROC SearchBillByDate
+@fromDate varchar(100),
+@toDate varchar(100),
+@name int
+AS
+SELECT Bill.id,Bill.DateCheckIn,Bill.DateCheckOut,TableFood.name,Bill.total 
+FROM Bill,TableFood 
+WHERE Bill.idTable = TableFood.id 
+AND Bill.status = 1
+AND Bill.DateCheckIn >= @fromDate
+AND Bill.DateCheckIn <= @toDate
+AND Bill.id LIKE @name
+GO
+--LỌC MÓN THEO DANH MỤC
+CREATE PROC ListFoodByCate
+@name NVARCHAR(100)
+AS
+SELECT Food.id,Food.name,Food.price,Food.image 
+FROM Food ,FoodCategory 
+WHERE Food.idCategory = FoodCategory.id AND FoodCategory.name = @name
+GO
+--LỌC MÓN THEO GIÁ
+CREATE PROC ListFoodByPrice
+@price int
+AS
+IF @price < 20000
+SELECT Food.id,Food.name,Food.price,Food.image 
+FROM Food ,FoodCategory 
+WHERE Food.idCategory = FoodCategory.id AND Food.price < @price
+IF (@price >= 20000 AND @price < 50000)
+SELECT Food.id,Food.name,Food.price,Food.image 
+FROM Food ,FoodCategory 
+WHERE Food.idCategory = FoodCategory.id AND Food.price >= @price AND Food.price <= 50000
+IF @price > 50000
+SELECT Food.id,Food.name,Food.price,Food.image 
+FROM Food ,FoodCategory 
+WHERE Food.idCategory = FoodCategory.id AND Food.price > 50000
+GO
+-- DANH SÁCH NHÂN VIÊN
 CREATE PROC ListStaff 
 AS
 	Select * from Staff
--- Thêm nhân viên 
+GO
+-- THÊM NHÂN VIÊN
 CREATE PROC InsertStaff
 @fullname Nvarchar(100) , 
 @phone Nvarchar(12) ,
 @address Nvarchar(100) ,
 @namelevel  nvarchar(100)
-
 AS
 	INSERT INTO Staff(FullName,Phone,Address ,NameLevel) VALUES (@fullname,@phone,@address,@namelevel)
-
-	INSERT INTO Staff(FullName,Phone,Address ,idlevel) VALUES ('abc','012454645','HUE',1)
-		SELECT * FROM STAFF
+GO
+--CẬP NHẬT NHÂN VIÊN
 CREATE PROC UpdateStaff 
 @id int ,
 @fullname Nvarchar(100) , 
@@ -214,14 +300,18 @@ CREATE PROC UpdateStaff
 @namelevel  nvarchar(100)
 as 
 	UPDATE Staff SET FullName = @fullname , Phone =@phone, Address = @address ,NameLevel = @namelevel where id = @id
-
-	UpdateStaff  1,'KHANH','08888888','HUE','LE TAN'
-
+GO
+--XÓA NHÂN VIÊN
 CREATE PROC DeleteStaff
 @id int 
 as
 	DELETE staff where id = @id 
+GO
+--TÌM KIẾM NHÂN VIÊN
 CREATE PROC FindStaff
 @fullname Nvarchar(100) 
 as
 select * from Staff WHERE FullName like '%'+@fullname+'%'
+
+
+

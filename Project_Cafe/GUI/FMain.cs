@@ -47,6 +47,7 @@ namespace GUI
 
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
+            BillManger manger = new BillManger();
             btnDoanhThu.Checked = true;
             if(btnDoanhThu.Checked == true)
             {
@@ -54,6 +55,7 @@ namespace GUI
                 btnListSanPham.Checked = false;
                 btnListUser.Checked = false;
             }
+            showControl(manger);
         }
 
         private void btnListSanPham_Click(object sender, EventArgs e)
@@ -69,7 +71,7 @@ namespace GUI
 
         private void btnListUser_Click(object sender, EventArgs e)
         {
-            StaffManager manager = new StaffManager();
+            StaffManager staff = new StaffManager();
             btnListUser.Checked = true;
             if (btnListUser.Checked == true)
             {
@@ -77,7 +79,7 @@ namespace GUI
                 btnHome.Checked = false;
                 btnListSanPham.Checked = false;
             }
-            showControl(manager);
+            showControl(staff);
         }
     }
 }

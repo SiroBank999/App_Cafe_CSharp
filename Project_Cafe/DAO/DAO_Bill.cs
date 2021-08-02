@@ -25,6 +25,97 @@ namespace DAO
                 return instance;
             }
         }
+        public List<Bill> SearchBillByDate(DateTime fromdate, DateTime todate,int name)
+        {
+            List<Bill> bills = new List<Bill>();
+            string query = "SearchBillByDate @fromDate , @toDate , @name";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@fromDate", SqlDbType.VarChar).Value = fromdate.ToString("yyyy-MM-dd") + " 00:00:00";
+                cmd.Parameters.Add("@toDate", SqlDbType.VarChar).Value = todate.ToString("yyyy-MM-dd") + " 23:59:00";
+                cmd.Parameters.Add("@name", SqlDbType.Int).Value = name;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Bill bill = new Bill();
+                    bill.Id = (int)dr["id"];
+                    bill.DateCheckIn = (DateTime)dr["DateCheckIn"];
+                    bill.DateCheckOut = (DateTime)dr["DateCheckOut"];
+                    bill.Nametable = dr["name"].ToString();
+                    bill.Total = (double)dr["total"];
+                    bills.Add(bill);
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+            return bills;
+        }
+        public List<Bill> getBillByDate(DateTime fromdate,DateTime todate)
+        {
+            List<Bill> bills = new List<Bill>();
+            string query = "ListBillByDate @fromDate , @toDate";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@fromDate", SqlDbType.VarChar).Value = fromdate.ToString("yyyy-MM-dd") + " 00:00:00";
+                cmd.Parameters.Add("@toDate", SqlDbType.VarChar).Value = todate.ToString("yyyy-MM-dd") + " 23:59:00";
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Bill bill = new Bill();
+                    bill.Id = (int)dr["id"];
+                    bill.DateCheckIn = (DateTime)dr["DateCheckIn"];
+                    bill.DateCheckOut = (DateTime)dr["DateCheckOut"];
+                    bill.Nametable = dr["name"].ToString();
+                    bill.Total = (double)dr["total"];
+                    bills.Add(bill);
+                }
+
+            }
+            catch(Exception)
+            {
+            }
+            return bills;
+        }
+        public void CheckOutBill(int id,float total)
+        {
+            string query = "Checkout @idBill, @total";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@idBill", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@total", SqlDbType.Float).Value = total;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        public void UpdateBill(int idTableTo,int idBill)
+        {
+            string query = "UpdateBill @idTableTo, @idBill";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@idTableTo", SqlDbType.Int).Value = idTableTo;
+                cmd.Parameters.Add("@idBill", SqlDbType.Int).Value = idBill;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         public void InsertBill(int id)
         {
             string query = "InsertBill @idTable";
@@ -36,9 +127,9 @@ namespace DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            catch
+            catch(Exception)
             {
-
+                  
             }
         }
         public Bill getBillByIdTable(int id)
