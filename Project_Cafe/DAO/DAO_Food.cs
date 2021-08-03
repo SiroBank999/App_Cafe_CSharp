@@ -28,6 +28,64 @@ namespace DAO
             }
                 
         }
+        public void UpdateFood(string name, int idCate, int price, string image,int id)
+        {
+            string query = "UpdateFood @name , @idCategory , @price, @image ,@id";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                cmd.Parameters.Add("@idCategory", SqlDbType.Int).Value = idCate;
+                cmd.Parameters.Add("@price", SqlDbType.Int).Value = price;
+                cmd.Parameters.Add("@image", SqlDbType.NVarChar).Value = image;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cmd.ExecuteNonQuery();
+            }
+            catch { }
+        }
+        public void InsertFood(string name , int idCate,int price,string image)
+        {
+            string query = "InsertFood @name , @idCategory , @price, @image";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                cmd.Parameters.Add("@idCategory", SqlDbType.Int).Value = idCate;
+                cmd.Parameters.Add("@price", SqlDbType.Int).Value = price;
+                cmd.Parameters.Add("@image", SqlDbType.NVarChar).Value = image;
+                cmd.ExecuteNonQuery();
+            }
+            catch { }
+        }
+        public Foods GetFoods(int id)
+        {
+            Foods food = new Foods();
+            string query = "GetFood @id";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                   
+                    food.IdFood = (int)dr["id"];
+                    food.NameFood = dr["name"].ToString();
+                    food.Id_categoryFood = (int)dr["idCategory"];
+                    food.PriceFood = (double)dr["price"];
+                    food.ImageFood = dr["image"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+            return food;
+        }
         public List<Foods> ListFoodByPrice(int price)
         {
             List<Foods> listFood = new List<Foods>();

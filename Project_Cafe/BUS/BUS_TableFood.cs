@@ -22,6 +22,14 @@ namespace BUS
             }
 
         }
+        public void UpdateTable(int idTable, string name)
+        {
+            DAO_TableFood.Instance.UpdateTable(idTable, name);
+        }
+        public void InsertTable(string name)
+        {
+            DAO_TableFood.Instance.InsertTable(name);
+        }
         public List<TableFood> getTableFood()
         {
             return DAO_TableFood.Instance.getTableFood();

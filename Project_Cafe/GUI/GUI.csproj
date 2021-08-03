@@ -110,6 +110,12 @@
     <Compile Include="FMoveTable.Designer.cs">
       <DependentUpon>FMoveTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shop_Manger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Manger.Designer.cs">
+      <DependentUpon>Shop_Manger.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMoveTable.resx">
       <DependentUpon>FMoveTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop_Manger.resx">
+      <DependentUpon>Shop_Manger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRBill.rdlc" />
     <EmbeddedResource Include="RPBill.resx">
@@ -217,6 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\icons8_add_24px.png" />
+    <Content Include="Images\icons8_add_24px_4.png" />
     <Content Include="Images\icons8_arrow_48px.png" />
     <Content Include="Images\icons8_bar_chart_50px_7.png" />
     <Content Include="Images\icons8_cafe_100px_2.png" />
@@ -226,7 +236,9 @@
     <Content Include="Images\icons8_database_24px.png" />
     <Content Include="Images\icons8_database_import_24px.png" />
     <Content Include="Images\icons8_delete_24px_1.png" />
+    <Content Include="Images\icons8_delete_bin_24px_2.png" />
     <Content Include="Images\icons8_features_list_50px.png" />
+    <Content Include="Images\icons8_image_24px.png" />
     <Content Include="Images\icons8_monitor_24px.png" />
     <Content Include="Images\icons8_password_24px_1.png" />
     <Content Include="Images\icons8_registration_50px.png" />
@@ -236,6 +248,7 @@
     <Content Include="Images\icons8_squared_menu_50px_4.png" />
     <Content Include="Images\icons8_sync_24px_1.png" />
     <Content Include="Images\icons8_table_top_view_50px.png" />
+    <Content Include="Images\icons8_update_user_24px.png" />
     <Content Include="Images\icons8_user_shield_24px.png" />
     <Content Include="Images\icons8_warehouse_50px.png" />
     <Content Include="Images\icons8_warehouse_50px_1.png" />

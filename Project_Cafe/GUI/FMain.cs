@@ -60,6 +60,7 @@ namespace GUI
 
         private void btnListSanPham_Click(object sender, EventArgs e)
         {
+            Shop_Manger shop = new Shop_Manger();
             btnListSanPham.Checked = true;
             if (btnListSanPham.Checked == true)
             {
@@ -67,6 +68,7 @@ namespace GUI
                 btnHome.Checked = false;
                 btnListUser.Checked = false;
             }
+            showControl(shop);
         }
 
         private void btnListUser_Click(object sender, EventArgs e)

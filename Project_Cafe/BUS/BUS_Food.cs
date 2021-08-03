@@ -24,6 +24,18 @@ namespace BUS
             }
             set => instance = value;
         }
+        public void UpdateFood(string name, int idCate, int price, string image, int id)
+        {
+            DAO_Food.Instance.UpdateFood(name, idCate, price, image,id);
+        }
+        public void InsertFood(string name, int idCate, int price, string image)
+        {
+            DAO_Food.Instance.InsertFood(name, idCate, price, image);
+        }
+        public Foods GetFoods(int id)
+        {
+            return DAO_Food.Instance.GetFoods(id);
+        }
         public List<Foods> getListFood()
         {
             return DAO_Food.Instance.getListFood();

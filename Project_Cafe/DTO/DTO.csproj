@@ -46,6 +46,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Bill.cs" />
     <Compile Include="BillInfo.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Foods.cs" />
     <Compile Include="ItemBill.cs" />
     <Compile Include="Staff.cs" />

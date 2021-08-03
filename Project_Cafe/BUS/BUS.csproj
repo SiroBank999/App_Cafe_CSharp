@@ -44,6 +44,7 @@
     <Compile Include="BUS_Admin.cs" />
     <Compile Include="BUS_Bill.cs" />
     <Compile Include="BUS_BillInfo.cs" />
+    <Compile Include="BUS_Category.cs" />
     <Compile Include="BUS_Food.cs" />
     <Compile Include="BUS_ItemBill.cs" />
     <Compile Include="BUS_Staff.cs" />

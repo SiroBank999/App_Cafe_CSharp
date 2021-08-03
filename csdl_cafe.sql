@@ -312,6 +312,54 @@ CREATE PROC FindStaff
 @fullname Nvarchar(100) 
 as
 select * from Staff WHERE FullName like '%'+@fullname+'%'
+GO
+-- THÊM BÀN MỚI
+CREATE PROC InsertTable
+@name NVARCHAR(100)
+AS
+INSERT INTO TableFood ([name]) VALUES(@name)
+GO
+--CẬP NHẬT BÀN ĂN
+CREATE PROC UpdateTable
+@idTable INT,
+@name NVARCHAR(100)
+AS
+UPDATE TableFood SET name = @name WHERE id = @idTable
+GO
+--LẤY 1 MÓN THEO ID
+CREATE PROC GetFood
+@id int
+AS
+SELECT * FROM Food WHERE id = @id
+GO
+--LẤY DANH SÁCH LOẠI MÓN
+CREATE PROC GetListCate
+AS
+select * from  FoodCategory
+GO
+--THÊM MÓN
+CREATE PROC InsertFood
+@name NVARCHAR(100),
+@idCategory int,
+@price int,
+@image varchar(250)
+AS
+INSERT INTO Food(name,idCategory,price,image) VALUES(@name,@idCategory,@price,@image)
+GO
+--CẬP NHẬT MÓN ĂN
+CREATE PROC UpdateFood
+@name NVARCHAR(100),
+@idCategory int,
+@price int,
+@image varchar(250),
+@id int
+AS
+UPDATE Food SET name = @name, idCategory = @idCategory, price = @price, image = @image WHERE id =@id 
+
+
+
+
+
 
 
 

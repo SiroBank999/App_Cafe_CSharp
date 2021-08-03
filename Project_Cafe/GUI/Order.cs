@@ -35,7 +35,7 @@ namespace GUI
                 item.Count,
                 item.Price,
                 null
-                });
+                }) ;
                
                 total += item.Price * item.Count;
                 

@@ -27,6 +27,39 @@ namespace DAO
         private SqlDataAdapter da = null;
         private SqlCommand cmd = null;
         private SqlDataReader dr = null;
+        public void UpdateTable(int idTable,string name)
+        {
+            string query = "UpdateTable @idTable , @name";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@idTable", SqlDbType.Int).Value = idTable;
+                cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        public void InsertTable(string name)
+        {
+            string query = "InsertTable @name";
+            try
+            {
+                conn = DataProvider.Instance.Connect();
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         public void MoveTable(int idTable, string status, int idTableTo, int idBill, string statusTo, int idTableToCurrent)
         {
             string query = "MoveTable @idTable , @status, @idTableTo , @idBill, @statusTo , @idTableToCurrent";

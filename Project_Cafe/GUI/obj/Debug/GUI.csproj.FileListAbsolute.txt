@@ -105,3 +105,4 @@ C:\Users\Admin\source\repos\Project_Cafe\GUI\obj\Debug\RdlCompile.compiled
 C:\Users\Admin\source\repos\Project_Cafe\GUI\obj\Debug\GUI.FMoveTable.resources
 C:\Users\Admin\source\repos\Project_Cafe\GUI\obj\Debug\GUI.BillManger.resources
 C:\Users\Admin\source\repos\Project_Cafe\GUI\obj\Debug\GUI.StaffManager.resources
+C:\Users\Admin\source\repos\Project_Cafe\GUI\obj\Debug\GUI.Shop_Manger.resources
