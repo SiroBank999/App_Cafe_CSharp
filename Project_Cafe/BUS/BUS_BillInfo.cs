@@ -1,10 +1,6 @@
 ﻿using DAO;
 using DTO;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BUS
 {
@@ -12,7 +8,7 @@ namespace BUS
     {
         private static BUS_BillInfo instance;
 
-        public static BUS_BillInfo Instance 
+        public static BUS_BillInfo Instance
         {
             get
             {

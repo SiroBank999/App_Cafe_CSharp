@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Xml;
 
 namespace DAO
@@ -47,15 +43,15 @@ namespace DAO
             }
 
         }
-        public  SqlConnection ConnectDB(string servername,string database,string username,string password)
+        public SqlConnection ConnectDB(string servername, string database, string username, string password)
         {
-            string DATABASE_LINK_TEST= @"Data Source=" + servername + ";Initial Catalog=" + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password + "";
+            string DATABASE_LINK_TEST = @"Data Source=" + servername + ";Initial Catalog=" + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password + "";
             SqlConnection conn = null;
             try
             {
                 conn = new SqlConnection(DATABASE_LINK_TEST);
                 conn.Open();
-                if (conn.State !=ConnectionState.Closed)
+                if (conn.State != ConnectionState.Closed)
                 {
                     Console.WriteLine("Connected");
                 }
@@ -68,7 +64,7 @@ namespace DAO
         }
         public SqlConnection Connect()
         {
-            if(DATABASE_LINK == null)
+            if (DATABASE_LINK == null)
             {
                 getDatabaseLink();
             }
@@ -95,14 +91,14 @@ public class XML
 
     private static XML instance;
 
-    public static XML Instance 
-    { 
+    public static XML Instance
+    {
         get
         {
             if (instance == null)
                 instance = new XML();
             return instance;
-        }   
+        }
     }
 
     public XmlDocument XMLReader(string filename)

@@ -2,9 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleAppCafe
 {
@@ -16,7 +13,7 @@ namespace ConsoleAppCafe
             int no = 1;
             foreach (Bill bill in bills)
             {
-             
+
             }
         }
     }

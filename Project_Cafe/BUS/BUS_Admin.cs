@@ -1,11 +1,5 @@
-﻿using DTO;
-using System;
-using System.Collections.Generic;
+﻿using DAO;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAO;
 
 namespace BUS
 {
@@ -17,19 +11,19 @@ namespace BUS
         {
             get
             {
-                if(intance == null)
+                if (intance == null)
                 {
                     intance = new BUS_Admin();
                 }
                 return intance;
-            } 
-       
-            set => intance = value; 
+            }
+
+            set => intance = value;
         }
 
-        public DataTable CheckAccount(string username,string password)
+        public DataTable CheckAccount(string username, string password)
         {
-            return DAO_Admin.Instance.CheckAccount(username,password);
+            return DAO_Admin.Instance.CheckAccount(username, password);
         }
     }
 }

@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
@@ -16,8 +13,8 @@ namespace DAO
         private SqlDataAdapter da = null;
         private SqlCommand cmd = null;
         private SqlDataReader dr = null;
-        public static DAO_ItemBill Instance 
-        { 
+        public static DAO_ItemBill Instance
+        {
             get
             {
                 if (instance == null)
@@ -33,11 +30,11 @@ namespace DAO
             {
                 conn = DataProvider.Instance.Connect();
                 cmd = new SqlCommand(query, conn);
-                cmd.Parameters.Add("@idTable",SqlDbType.BigInt).Value = id;
+                cmd.Parameters.Add("@idTable", SqlDbType.BigInt).Value = id;
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    ItemBill item = new ItemBill(); 
+                    ItemBill item = new ItemBill();
                     item.Count = (int)dr["SL"];
                     item.FoodName = dr["NameFood"].ToString();
                     item.Price = (double)dr["Price"];
@@ -45,7 +42,7 @@ namespace DAO
                 }
                 conn.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }

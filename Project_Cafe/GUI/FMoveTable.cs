@@ -2,12 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -16,19 +10,19 @@ namespace GUI
     {
         public int idTable;
         public int idBill;
-       
+
         public FMoveTable(string name)
         {
             InitializeComponent();
             LoadTableMove();
             btnTableCurrent.Text = name;
-           
-            
+
+
         }
 
         public int IdTable { get => idTable; set => idTable = value; }
         public int IdBill { get => idBill; set => idBill = value; }
-       
+
 
         public void LoadTableMove()
         {
@@ -55,7 +49,7 @@ namespace GUI
                 button.Location = new System.Drawing.Point(3, 3);
                 button.Size = new System.Drawing.Size(80, 75);
                 button.TabIndex = 3;
-                button.Text = "" +table.Name.ToString();
+                button.Text = "" + table.Name.ToString();
                 button.Click += btnXacNhan;
                 FlowTable.Controls.Add(button);
             }

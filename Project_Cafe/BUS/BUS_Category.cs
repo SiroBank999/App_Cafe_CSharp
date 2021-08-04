@@ -1,10 +1,6 @@
 ﻿using DAO;
 using DTO;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BUS
 {
@@ -12,8 +8,8 @@ namespace BUS
     {
         private static BUS_Category instance;
 
-        public static BUS_Category Instance 
-        { 
+        public static BUS_Category Instance
+        {
             get
             {
                 if (instance == null)

@@ -2,13 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -58,14 +52,14 @@ namespace GUI
                 bool check = true;
                 foreach (BillInfo info in bills)
                 {
-                    if(info.IdFood == IdFood)
+                    if (info.IdFood == IdFood)
                     {
-                        
-                        BUS_BillInfo.Instance.UpdateBillInfo(info.Count + 1,info.Id);
+
+                        BUS_BillInfo.Instance.UpdateBillInfo(info.Count + 1, info.Id);
                         check = false;
-                    }   
+                    }
                 }
-                if(check == true)
+                if (check == true)
                 {
                     BUS_BillInfo.Instance.InsertBillInfo(idbill, IdFood, 1);
                     BUS_TableFood.Instance.UpdateStatusTable(IdTable, "Có người");

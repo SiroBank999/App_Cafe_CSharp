@@ -1,39 +1,46 @@
 ﻿using DTO;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Reporting.WinForms;
 
 namespace GUI
 {
     public partial class RPBill : Form
     {
-        List<ItemBill> bills; 
-        public RPBill(List<ItemBill> items)
+        List<ItemBill> bills;
+        string total_;
+        //Bill bill_;
+        public RPBill(List<ItemBill> items,double total)// Bill bill)
         {
             InitializeComponent();
             this.bills = items;
+            //this.bill_ = bill;
+            this.total_ = total.ToString("C").Replace(",00","");
+           
+
         }
 
         private void RPBill_Load(object sender, EventArgs e)
         {
-            RPVBill.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
-            RPVBill.LocalReport.ReportPath = "PRBill.rdlc";
-            if(bills != null)
+            
+            RView.LocalReport.ReportPath =Application.StartupPath + @"\UIBill.rdlc";
+            if (bills != null)
             {
                 ReportDataSource source = new ReportDataSource();
-                source.Name = "DataBill";
+                source.Name = "DSBill";
                 source.Value = bills;
-                RPVBill.LocalReport.DataSources.Clear();
-                RPVBill.LocalReport.DataSources.Add(source);
+                RView.LocalReport.DataSources.Clear();
+                RView.LocalReport.DataSources.Add(source);
+
             }
-            this.RPVBill.RefreshReport();
+            Microsoft.Reporting.WinForms.ReportParameter[] parameter = new Microsoft.Reporting.WinForms.ReportParameter[]{
+                    new Microsoft.Reporting.WinForms.ReportParameter("pTotal",total_)
+                    
+                };
+            RView.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+            this.RView.LocalReport.SetParameters(parameter);
+            this.RView.RefreshReport();
         }
     }
 }

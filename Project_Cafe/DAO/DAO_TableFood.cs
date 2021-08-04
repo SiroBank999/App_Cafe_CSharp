@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
@@ -13,7 +10,7 @@ namespace DAO
     {
         private static DAO_TableFood instance;
 
-        public static DAO_TableFood Instance 
+        public static DAO_TableFood Instance
         {
             get
             {
@@ -21,13 +18,13 @@ namespace DAO
                     instance = new DAO_TableFood();
                 return instance;
             }
-        
+
         }
         private SqlConnection conn = null;
         private SqlDataAdapter da = null;
         private SqlCommand cmd = null;
         private SqlDataReader dr = null;
-        public void UpdateTable(int idTable,string name)
+        public void UpdateTable(int idTable, string name)
         {
             string query = "UpdateTable @idTable , @name";
             try
@@ -73,7 +70,7 @@ namespace DAO
                 cmd.Parameters.Add("@statusTo", SqlDbType.NVarChar).Value = statusTo;
                 cmd.Parameters.Add("@idBill", SqlDbType.Int).Value = idBill;
                 cmd.Parameters.Add("@idTableToCurrent", SqlDbType.Int).Value = idTableToCurrent;
-                
+
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
@@ -82,7 +79,7 @@ namespace DAO
 
             }
         }
-        public void UpdateStatusTable(int id,string status)
+        public void UpdateStatusTable(int id, string status)
         {
             string query = "UpdateStatusTable @id , @status";
             try
@@ -94,7 +91,7 @@ namespace DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -106,7 +103,7 @@ namespace DAO
             try
             {
                 conn = DataProvider.Instance.Connect();
-                cmd = new SqlCommand(query,conn);
+                cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -119,7 +116,7 @@ namespace DAO
                 conn.Close();
 
             }
-            catch(Exception)
+            catch (Exception)
             {
             }
             return list;

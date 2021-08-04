@@ -1,14 +1,7 @@
 ﻿using BUS;
 using DTO;
-using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -21,7 +14,7 @@ namespace GUI
         public Order()
         {
             InitializeComponent();
-    
+
         }
         public void LoadBillInfo()
         {
@@ -35,10 +28,10 @@ namespace GUI
                 item.Count,
                 item.Price,
                 null
-                }) ;
-               
+                });
+
                 total += item.Price * item.Count;
-                
+
             }
             InfoBillGird.CellDoubleClick += btnMoveItem;
             LBMoney.Text = total.ToString("C").Replace(",00", "");
@@ -67,11 +60,11 @@ namespace GUI
                     LoadBillInfo();
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
-                
+
             }
-                    
+
         }
 
         public void LoadData()
@@ -93,14 +86,14 @@ namespace GUI
 
         //    }
         //    LBMoney.Text = total.ToString("C").Replace(",00", "");
-            
+
 
         //}
-        
+
         public string NameTable { get => nameTable; set => nameTable = value; }
         public int IdTable { get => idTable; set => idTable = value; }
-        public static Order Instance 
-        { 
+        public static Order Instance
+        {
             get
             {
                 if (instance == null)
@@ -112,11 +105,11 @@ namespace GUI
         private void Order_Load(object sender, EventArgs e)
         {
             OrderLoad();
-            
+
         }
         public void showControl(Control control)
         {
-          
+
             FLFood.Controls.Add(control);
         }
         public void ListFoodByPrice(int price)
@@ -166,7 +159,7 @@ namespace GUI
                 ufood.IdTable = IdTable;
                 ufood.ImageFood = food.ImageFood;
                 ufood.NameFood = food.NameFood;
-                ufood.Label_.Click += LAddFood_Click ;
+                ufood.Label_.Click += LAddFood_Click;
                 ufood.Price = food.PriceFood.ToString("C").Replace(",00", "");
                 ufood.getLoadFood();
 
@@ -183,7 +176,12 @@ namespace GUI
         private void btnTam_Click(object sender, EventArgs e)
         {
             List<ItemBill> listitems = BUS_ItemBill.Instance.getListItemByTable(IdTable);
-            RPBill pBill = new RPBill(listitems);
+            double total = 0;
+            foreach (ItemBill item in listitems)
+            {
+                total += item.Price * item.Count;
+            }
+            RPBill pBill = new RPBill(listitems , total);
             pBill.Show();
         }
 
@@ -197,9 +195,11 @@ namespace GUI
             }
             Bill bill = BUS_Bill.Instance.getBillByIdTable(IdTable);
             int idBill = bill.Id;
-            BUS_Bill.Instance.CheckOutBill(idBill,total);
+            BUS_Bill.Instance.CheckOutBill(idBill, total);
             BUS_TableFood.Instance.UpdateStatusTable(IdTable, "Trống");
             LoadBillInfo();
+            RPCheckOut rPCheck = new RPCheckOut(listitems, total,bill);
+            rPCheck.ShowDialog();
 
         }
 
@@ -220,7 +220,7 @@ namespace GUI
 
         private void cbCategory_SelectedValueChanged(object sender, EventArgs e)
         {
-            ListFoodByCate(cbCategory.SelectedItem.ToString()); 
+            ListFoodByCate(cbCategory.SelectedItem.ToString());
         }
 
         private void cbPrice_SelectedValueChanged(object sender, EventArgs e)

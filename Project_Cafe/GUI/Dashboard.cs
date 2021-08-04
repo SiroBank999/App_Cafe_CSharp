@@ -1,20 +1,14 @@
-﻿using DTO;
+﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
 
 namespace GUI
 {
     public partial class Dashboard : UserControl
     {
-        
+
         public Dashboard()
         {
             InitializeComponent();
@@ -39,7 +33,7 @@ namespace GUI
                         button.BackColor = System.Drawing.SystemColors.ScrollBar;
                         break;
                 }
-                
+
                 button.Cursor = System.Windows.Forms.Cursors.Hand;
                 button.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar;
                 button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -53,11 +47,11 @@ namespace GUI
                 button.Tag = table;
                 button.Click += btn_Click;
                 pTable.Controls.Add(button);
-                
+
             }
         }
-    
-     
+
+
 
         public void btn_Click(object sender, EventArgs e)
         {
@@ -73,7 +67,7 @@ namespace GUI
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            
+
             Custom custom = new Custom();
             showControl(custom);
         }

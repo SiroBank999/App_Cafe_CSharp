@@ -2,13 +2,8 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -28,15 +23,15 @@ namespace GUI
         {
             cbType.Items.Clear();
             List<Category> categories = BUS_Category.Instance.GetCategories();
-            foreach(Category category in categories)
+            foreach (Category category in categories)
             {
                 cbType.Items.Add(category.Name);
-                
+
             }
 
 
         }
-        public void UpdateTable(int idTable,string name)
+        public void UpdateTable(int idTable, string name)
         {
             BUS_TableFood.Instance.UpdateTable(idTable, name);
             LoadTable();
@@ -58,7 +53,7 @@ namespace GUI
                 {
                     if (category.Id == food.Id_categoryFood)
                     {
-                      namecate = category.Name;
+                        namecate = category.Name;
                     }
 
                 }
@@ -75,8 +70,8 @@ namespace GUI
         {
             DataViewTable.Rows.Clear();
             List<TableFood> tables = BUS.BUS_TableFood.Instance.getTableFood();
-            
-            foreach(TableFood table in tables)
+
+            foreach (TableFood table in tables)
             {
                 DataViewTable.Rows.Add(new object[] {
                 table.Id,
@@ -96,7 +91,7 @@ namespace GUI
             {
                 int index = DataViewTable.CurrentCell.RowIndex;
                 idTable = Convert.ToInt32(DataViewTable.Rows[index].Cells[0].Value.ToString());
-                txtNameTable.Text = DataViewTable.Rows[index].Cells[1].Value.ToString().Replace("Bàn ","");
+                txtNameTable.Text = DataViewTable.Rows[index].Cells[1].Value.ToString().Replace("Bàn ", "");
             }
             catch { }
         }
@@ -112,13 +107,13 @@ namespace GUI
             try
             {
                 int index = DataViewFood.CurrentCell.RowIndex;
-                
+
                 idFood = Convert.ToInt32(DataViewFood.Rows[index].Cells[0].Value.ToString());
                 Foods foods = BUS_Food.Instance.GetFoods(idFood);
                 txtNameFood.Text = DataViewFood.Rows[index].Cells[1].Value.ToString();
                 txtPrice.Text = foods.PriceFood.ToString();
                 List<Category> categories = BUS_Category.Instance.GetCategories();
-                
+
                 cbType.Text = DataViewFood.Rows[index].Cells[3].Value.ToString();
                 txtImage.Text = foods.ImageFood;
 
@@ -135,7 +130,7 @@ namespace GUI
                 if (open.ShowDialog() == DialogResult.OK)
                 {
 
-                    string path =Path.Combine(@"Images\Uploads\");
+                    string path = Path.Combine(@"Images\Uploads\");
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
@@ -177,7 +172,7 @@ namespace GUI
                 }
 
             }
-            BUS_Food.Instance.UpdateFood(txtNameFood.Text, idCate, int.Parse(txtPrice.Text), txtImage.Text,idFood);
+            BUS_Food.Instance.UpdateFood(txtNameFood.Text, idCate, int.Parse(txtPrice.Text), txtImage.Text, idFood);
             LoadFood();
         }
     }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -26,17 +19,17 @@ namespace GUI
         // Hàm Event
         private void btnHome_Click(object sender, EventArgs e)
         {
-           Dashboard dashboard = new Dashboard();
-           btnHome.Checked = true;
-           if(btnHome.Checked == true)
+            Dashboard dashboard = new Dashboard();
+            btnHome.Checked = true;
+            if (btnHome.Checked == true)
             {
                 btnDoanhThu.Checked = false;
                 btnListSanPham.Checked = false;
                 btnListUser.Checked = false;
             }
-           showControl(dashboard);
+            showControl(dashboard);
         }
-       
+
 
         private void FMain_Load(object sender, EventArgs e)
         {
@@ -49,7 +42,7 @@ namespace GUI
         {
             BillManger manger = new BillManger();
             btnDoanhThu.Checked = true;
-            if(btnDoanhThu.Checked == true)
+            if (btnDoanhThu.Checked == true)
             {
                 btnHome.Checked = false;
                 btnListSanPham.Checked = false;

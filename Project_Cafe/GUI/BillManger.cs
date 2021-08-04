@@ -2,12 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -16,20 +10,20 @@ namespace GUI
     {
         public BillManger()
         {
-           
+
             InitializeComponent();
             DateTime date = DateTime.Now;
-            FromDate.Value = new DateTime(date.Year,date.Month,1);
+            FromDate.Value = new DateTime(date.Year, date.Month, 1);
             ToDate.Value = FromDate.Value.AddMonths(1).AddDays(-1);
             LoadBillByDate(FromDate.Value, ToDate.Value);
         }
-        public void LoadBillByDate(DateTime fromdate,DateTime todate)
+        public void LoadBillByDate(DateTime fromdate, DateTime todate)
         {
             dataView.Rows.Clear();
             List<Bill> bills = BUS_Bill.Instance.getBillByDate(fromdate, todate);
             int no = 1;
             double total = 0;
-            foreach(Bill bill in bills)
+            foreach (Bill bill in bills)
             {
                 dataView.Rows.Add(new object[] {
                 no++,
@@ -41,13 +35,13 @@ namespace GUI
                 total += bill.Total;
             }
             lbTotal.Text = "Tổng doanh thu: " + total.ToString("C").Replace(",00", "");
-            lbCount.Text = "Tổng số hóa đơn: " + (no-1);
+            lbCount.Text = "Tổng số hóa đơn: " + (no - 1);
 
         }
-        public void SearchBillByDate(DateTime fromdate, DateTime todate,int name)
+        public void SearchBillByDate(DateTime fromdate, DateTime todate, int name)
         {
             dataView.Rows.Clear();
-            List<Bill> bills = BUS_Bill.Instance.SearchBillByDate(fromdate, todate,name);
+            List<Bill> bills = BUS_Bill.Instance.SearchBillByDate(fromdate, todate, name);
             int no = 1;
             double total = 0;
             foreach (Bill bill in bills)
@@ -86,8 +80,16 @@ namespace GUI
             {
                 LoadBillByDate(FromDate.Value, ToDate.Value);
             }
-           
-           
+
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            DateTime date = FromDate.Value;
+            List<Bill> bills = BUS_Bill.Instance.getBillByDate(FromDate.Value, ToDate.Value);
+            RPSales sales = new RPSales(bills, date);
+            sales.ShowDialog();
         }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using DAO;
 using DTO;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BUS
 {
@@ -12,11 +8,11 @@ namespace BUS
     {
         private static BUS_Food instance;
 
-        public static BUS_Food Instance 
+        public static BUS_Food Instance
         {
             get
             {
-                if(instance == null)
+                if (instance == null)
                 {
                     instance = new BUS_Food();
                 }
@@ -26,7 +22,7 @@ namespace BUS
         }
         public void UpdateFood(string name, int idCate, int price, string image, int id)
         {
-            DAO_Food.Instance.UpdateFood(name, idCate, price, image,id);
+            DAO_Food.Instance.UpdateFood(name, idCate, price, image, id);
         }
         public void InsertFood(string name, int idCate, int price, string image)
         {

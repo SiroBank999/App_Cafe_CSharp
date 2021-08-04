@@ -29,32 +29,32 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.RPVBill = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.RView = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // RPVBill
+            // RView
             // 
-            this.RPVBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RPVBill.Location = new System.Drawing.Point(0, 0);
-            this.RPVBill.Name = "RPVBill";
-            this.RPVBill.Size = new System.Drawing.Size(527, 450);
-            this.RPVBill.TabIndex = 0;
+            this.RView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RView.Location = new System.Drawing.Point(0, 0);
+            this.RView.Name = "RView";
+            this.RView.ServerReport.BearerToken = null;
+            this.RView.Size = new System.Drawing.Size(313, 450);
+            this.RView.TabIndex = 0;
             // 
             // RPBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 450);
-            this.Controls.Add(this.RPVBill);
+            this.ClientSize = new System.Drawing.Size(313, 450);
+            this.Controls.Add(this.RView);
             this.Name = "RPBill";
-            this.Text = "RPBill";
+            this.Text = "Thanh toán hóa đơn";
             this.Load += new System.EventHandler(this.RPBill_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer RPVBill;
+        private Microsoft.Reporting.WinForms.ReportViewer RView;
     }
 }

@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
@@ -16,7 +13,7 @@ namespace DAO
         private SqlDataAdapter da = null;
         private SqlCommand cmd = null;
         private SqlDataReader dr = null;
-        public static DAO_Bill Instance 
+        public static DAO_Bill Instance
         {
             get
             {
@@ -25,7 +22,7 @@ namespace DAO
                 return instance;
             }
         }
-        public List<Bill> SearchBillByDate(DateTime fromdate, DateTime todate,int name)
+        public List<Bill> SearchBillByDate(DateTime fromdate, DateTime todate, int name)
         {
             List<Bill> bills = new List<Bill>();
             string query = "SearchBillByDate @fromDate , @toDate , @name";
@@ -54,7 +51,7 @@ namespace DAO
             }
             return bills;
         }
-        public List<Bill> getBillByDate(DateTime fromdate,DateTime todate)
+        public List<Bill> getBillByDate(DateTime fromdate, DateTime todate)
         {
             List<Bill> bills = new List<Bill>();
             string query = "ListBillByDate @fromDate , @toDate";
@@ -77,12 +74,12 @@ namespace DAO
                 }
 
             }
-            catch(Exception)
+            catch (Exception)
             {
             }
             return bills;
         }
-        public void CheckOutBill(int id,float total)
+        public void CheckOutBill(int id, float total)
         {
             string query = "Checkout @idBill, @total";
             try
@@ -99,7 +96,7 @@ namespace DAO
 
             }
         }
-        public void UpdateBill(int idTableTo,int idBill)
+        public void UpdateBill(int idTableTo, int idBill)
         {
             string query = "UpdateBill @idTableTo, @idBill";
             try
@@ -127,9 +124,9 @@ namespace DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
-                  
+
             }
         }
         public Bill getBillByIdTable(int id)
@@ -152,11 +149,11 @@ namespace DAO
                 }
                 conn.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
             return bill;
-        } 
+        }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
-using DTO;
+using System.Data.SqlClient;
 namespace DAO
 {
     public class DAO_Admin
@@ -16,7 +11,8 @@ namespace DAO
         private SqlCommand cmd = null;
         private SqlDataReader dr = null;
 
-        public static DAO_Admin Instance { 
+        public static DAO_Admin Instance
+        {
             get
             {
                 if (instance == null)
@@ -24,23 +20,23 @@ namespace DAO
                 return instance;
             }
         }
-        public DataTable CheckAccount(string username,string password)
+        public DataTable CheckAccount(string username, string password)
         {
             DataTable data = new DataTable();
             string query = "CheckAccount @username , @password";
             try
             {
                 conn = DataProvider.Instance.Connect();
-                cmd = new SqlCommand(query,conn);
-                cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value =username;
-                cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value =password;
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+                cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
                 da = new SqlDataAdapter(cmd);
                 da.Fill(data);
                 conn.Close();
             }
             catch (Exception)
-            {        
-            }     
+            {
+            }
             return data;
         }
     }

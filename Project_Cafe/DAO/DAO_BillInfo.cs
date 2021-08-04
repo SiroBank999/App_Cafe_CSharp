@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
@@ -17,7 +14,7 @@ namespace DAO
         private SqlDataReader dr = null;
         private static DAO_BillInfo instance;
 
-        public static DAO_BillInfo Instance 
+        public static DAO_BillInfo Instance
         {
             get
             {
@@ -26,7 +23,7 @@ namespace DAO
                 return instance;
             }
         }
-        public void DelBillInfo(int idBill,int idFood)
+        public void DelBillInfo(int idBill, int idFood)
         {
             string query = "DelBillInfo @idBill, @idFood";
             try
@@ -43,7 +40,7 @@ namespace DAO
 
             }
         }
-        public void UpdateBillInfo(int count,int id)
+        public void UpdateBillInfo(int count, int id)
         {
             string query = "UpdateBillInfo @count, @id";
             try
@@ -55,7 +52,7 @@ namespace DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -81,7 +78,7 @@ namespace DAO
                 }
                 conn.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -89,7 +86,7 @@ namespace DAO
             return listinfo;
 
         }
-        public void InsertBillInfo(int idBill,int idFood,int count)
+        public void InsertBillInfo(int idBill, int idFood, int count)
         {
             string query = "InsertBillInfo @idBill,@idFood,@count";
             try
@@ -102,7 +99,7 @@ namespace DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
